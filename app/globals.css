@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f7dc;
+  --surface: #e9efc0;
+  --surface-strong: #dee6a3;
+  --foreground: #23241f;
+  --muted: #5c5e4e;
+  --accent: #d6336c;
+  --accent-soft: #7ca82b;
+  --accent-warm: #e8b923;
+  --accent-contrast: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-warm: var(--accent-warm);
+  --color-accent-contrast: var(--accent-contrast);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+
+.custom-cursor-active,
+.custom-cursor-active * {
+  cursor: none !important;
+}
+
+@keyframes cursor-splat {
+  from {
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 0.85;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
+
+.animate-cursor-splat {
+  animation: cursor-splat 0.65s ease-out forwards;
 }
