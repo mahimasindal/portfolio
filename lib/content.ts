@@ -12,7 +12,7 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/mahima-sindal-268793183",
     github: "https://github.com/mahimasindal",
     leetcode: "https://leetcode.com/u/mahima_sindal",
-    resume: "/Mahima%20Sindal%20Senior%20Software%20Engineer.pdf",
+    resume: "/Mahima_Sindal_Resume.pdf",
   },
 };
 
